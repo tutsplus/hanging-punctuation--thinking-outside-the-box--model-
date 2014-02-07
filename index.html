@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>Hanging Punctuation Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="tuts-styles.css">
+    <style>
+    .hang-punctuation .indent-small {text-indent: -.2325em}
+    .hang-punctuation .indent-medium {text-indent: -.4125em} 
+    .hang-punctuation .indent-large {text-indent: -.475em} 
+    .hang-punctuation .indent-header-small {text-indent: -.325em}
+    .hang-punctuation .indent-header-medium {text-indent: -.5125em} 
+    .hang-punctuation .indent-header-large {text-indent: -.7125em} 
+    .hang-punctuation ul {padding-left: 0}
+    </style>
+    
+</head>
+<body>
+
+    <nav>
+        <div class="wrapper">
+        
+            <a class="global-nav__header-tuts-logo-link" href="http://hub.tutsplus.com"><img alt="tuts+" class="global-nav__header-tuts-logo-image" data-cfsrc="tuts_logo.svg" src="tuts_logo.svg"></a>  
+            
+            <button id="change-hang">Hang</button>
+            <button id="change-border">Toggle Border</button>
+            <a href="#">Read the tutorial on Tuts+</a>
+                     
+        </div>
+    </nav>
+
+	<main class="wrapper">
+        <article class="post">
+            <h1>Hanging Punctuation in Block Level Elements</h1>
+            
+            <p>Left aligned block-level elements (such as such as <code>&lt;p></code> and <code>&lt;blockquote></code>) that begin with certain punctuation marks can hang the punctuation in the left margin by giving the element a negative <code>text-indent</code> value in CSS. Using javascript you can find the elements that begin with hangable punctuation and apply a corresponding HTML class to them.</p>
+            
+            <p>Some puntuation marks are thicker in width than others. If you want to be more precise in aligning your hanging puntuation, you can create multiple HTML classes whose <code>text-indent</code> values vary slightly. Thus the negative indent width of each block-level element will depend on the width of its beginning punctuation mark.</p>
+
+            <p>Try toggling the hanging punctuation on this page to see its effects.</p>
+
+            <h2>“Smart Quotes” Can Be Hung</h2>
+
+            <p>“Smart double quotes” (<code>&amp;ldquo;</code> and <code>&amp;rdquo;</code>) qualify to be hung at the beginning of a paragraph or other block-level element.</p>
+
+            <p>‘Smart single quotes’ (<code>&amp;lsquo;</code> and <code>&amp;rsquo;</code>) can also begin a block-level element and qualify to be hung. They are, however, slightly thinner in width than double quotes and require a slightly smaller indent for more precise alignment.</p>
+
+            <h2>"Dumb Quotes" Can Also Be Hung</h2>
+            
+            <p>"Dumb double quotes" (<code>&amp;quot;</code>) can be hung and use about the same indent width as smart double quotes.</p>
+
+            <p>'Single dumb quotes' (<code>&amp;#39;</code>) can also be hung. Similar to the smart single quotes, dumb single quotes are thinner than double quotes and thus should use a slightly thinner negative indent.</p>
+
+            <h2>Blockquotes Can Hang Beginning Punctuation</h2>
+            <p>Blocks of text inside <code>blockquote</code> elements can also have hanging punctuation, depending on how you style them.</p>
+            <blockquote>
+                <p>“Don’t forget that blockquotes are important design elements. They too can have eligible beginning punctuation marks hung in the left margin,” said a web designer.</p>
+                <p>Remember that quoted excerpts can have multiple lines, so that means multiple <code>&lt;p></code> tags need to be parsed inside the <code>&lt;blockquote></code> element.</p>
+            </blockquote>
+
+            <h2>Hanging Lists</h2>
+
+            <p>You can also hang list elements by putting the list mark outside the containing box. This can be done by setting the list style to <code>ul {list-style-position: outside}</code>.</p>
+
+            <ul>
+                <li>Make sure that you reset the styles for the list</li>
+                <li>This includes overriding styles like <code>padding: 0; margin: 0</code></li>
+                <li>Ensure the container of the list item does not have <code>overflow: hidden</code> set, otherwise the bullets will not be visible</li>
+                <li>"Hanging punctuation" inside list elements can be troublesome, as the bullet points could collide with the hanging punctuation.</li>
+            </ul>
+
+            <p>Note that it’s not actually impossible to hang punctuation inside <code>&lt;li></code> elements styled with bullet points. To do so, you’d have to manually space the bullet points from the punctuation so they don’t collide, which would require removing the list bullet points (<code>list-style-type:none</code>) and adding them back as either a background image or pseudo element with sufficient negative margins.</p>
+
+            <p>In the end, hanging list item marks is a <a href="http://www.gnomon-design.gr/blog/hanging-punctuation-and-bullet-lists/">personal decision</a>.
+
+
+            <h2>International Quotation Marks</h2>
+
+            <p>There are a variety of non-English quotation marks which could also be hung when beginning a sentence. Listed are a few examples, but you can find a more comprehensive list on <a href="http://en.wikipedia.org/wiki/Quotation_mark_glyphs">Wikipedia</a>.</p>
+
+            <p>&laquo;Double angle quotes&raquo; (<code>&amp;laquo;</code> and <code>&amp;raquo;</code>), also called guillemets, are a non-English form of punctuation mark and can be hung when beginning a sentence.</p>
+
+            <p>&lsaquo;Single angle quotes&rsaquo; (<code>&amp;lsaquo;</code> and <code>&amp;rsaquo;</code>) can also be hung. Similar to the double angle quotes, they are a non-English form of punctuation.</p>
+
+            <p>&bdquo;A double low smart quote mark&rdquo; (<code>&amp;bdquo;</code>), is an International form of punctuation. It corresponds with a smart double quote (&bdquo;Hungarian quote marks&rdquo; or &bdquo;Icelandic quote marks&ldquo;) to indicate a quotation or direct speech. It qualifies to be hung when beginning a sentence.</p>
+
+            <p>&sbquo;A single low smart quote&rsquo; (<code>&amp;sbquo;</code>) is also an International form of punctuation that is used in tandem with a smart single quote (&sbquo;low-high quotes&rsquo; or &sbquo;Icelandic single quotes&lsquo;) to indicate a quotation or direct speech. Similar to smart single quotes, it can also be hung when beginning a sentence.</p>
+
+            
+            <h2>“Moby Dick” Excerpt: An Example of Continuous Hanging Punctuation</h2>
+            <p>But though the other boarders kept coming in by ones, twos, and threes, and going to bed, yet no sign of my harpooneer.</p>
+            <p>“Landlord!” said I, “what sort of a chap is he—does he always keep such late hours?” It was now hard upon twelve o'clock.</p>
+            <p>The landlord chuckled again with his lean chuckle, and seemed to be mightily tickled at something beyond my comprehension. “No,” he answered, “generally he’s an early bird—airley to bed and airley to rise—yes, he’s the bird what catches the worm. But to-night he went out a peddling, you see, and I don’t see what on airth keeps him so late, unless, may be, he can’t sell his head.”</p>
+            <p>“Can't sell his head?—What sort of a bamboozingly story is this you are telling me?” getting into a towering rage. “Do you pretend to say, landlord, that this harpooneer is actually engaged this blessed Saturday night, or rather Sunday morning, in peddling his head around this town?”</p>
+            <p>“That's precisely it,” said the landlord, “and I told him he couldn't sell it here, the market's overstocked.”</p>
+            <p>“With what?” shouted I.</p>
+            <p>“With heads to be sure; ain't there too many heads in the world?”</p>
+            <p>“I tell you what it is, landlord,” said I quite calmly, “you'd better stop spinning that yarn to me—I'm not green.”</p>
+            <p>“May be not,” taking out a stick and whittling a toothpick, “but I rayther guess you’ll be done BROWN if that ere harpooneer hears you a slanderin' his head.”</p>
+            <p>“I’ll break it for him,” said I, now flying into a passion again at this unaccountable farrago of the landlord’s.</p>
+            <p>“It’s broke a’ready,” said he.</p>
+            <p>“Broke,” said I—“BROKE, do you mean?”</p>
+            <p>“Sartain, and that’s the very reason he can’t sell it, I guess.”</p>
+        </article>
+    </main>
+
+    <script type="text/javascript" src="hang-punctuation.js"></script>
+</body>
+</html>
