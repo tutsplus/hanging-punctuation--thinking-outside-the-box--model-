@@ -114,9 +114,9 @@ nav {
     padding: 1em 0;
     z-index: 10;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 850px) {
     nav {
-        padding: .75em 0 .325em;
+        padding: 60px 0 .325em;
     }
 }
 
@@ -147,6 +147,13 @@ button {
     border: none;
     cursor: pointer;
 }
+
+.addthis_toolbox {
+	position: absolute;
+	right: 0;
+	top: 24px;	
+}
+
 #change-hang, 
 #change-border {
     display: inline-block;
