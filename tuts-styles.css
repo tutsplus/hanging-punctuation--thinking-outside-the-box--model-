@@ -116,7 +116,7 @@ nav {
 }
 @media screen and (max-width: 850px) {
     nav {
-        padding: 60px 0 .325em;
+        padding: 60px 0 15px;
     }
 }
 
