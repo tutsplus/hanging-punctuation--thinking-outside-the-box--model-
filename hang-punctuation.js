@@ -47,8 +47,6 @@ function hangPunctuation(container) {
 
         for(var mark in marks) {
             if ( text.indexOf(mark) === 0 ){
-                if (el.tagName === 'H1' || el.tagName === 'H2' || el.tagName === 'H3' || el.tagName === 'H4' || el.tagName === 'H5' )
-                    htmlClass += 'header-';
                 el.classList.add(htmlClass + marks[mark]);
             }
         }
