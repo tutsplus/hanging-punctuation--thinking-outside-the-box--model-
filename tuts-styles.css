@@ -114,11 +114,7 @@ nav {
     padding: 1em 0;
     z-index: 10;
 }
-@media screen and (max-width: 850px) {
-    nav {
-        padding: 60px 0 15px;
-    }
-}
+
 
 /* LINKS AND BUTTONS THEREUPON.. */
 
